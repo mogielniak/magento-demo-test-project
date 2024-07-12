@@ -9,8 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-final
-public class WebDriverHelper {
+final public class WebDriverHelper {
     private static WebDriver driver;
     public static WebDriver getDriver() {
         if (driver == null) {

@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 public class PageHelper {
     protected WebDriver driver;
 
-    public PageHelper(){
+    public PageHelper(WebDriver driver){
         this.driver = WebDriverHelper.getDriver();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(this.driver,this);
     }
     public void click(WebElement element){
         element.click();
