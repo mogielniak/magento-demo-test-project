@@ -19,7 +19,7 @@ public class PageHelper {
         this.driver = WebDriverHelper.getDriver();
         PageFactory.initElements(this.driver,this);
     }
-    public void click(WebElement element){
+    public void Click(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }

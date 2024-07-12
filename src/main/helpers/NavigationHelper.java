@@ -9,9 +9,10 @@ public class NavigationHelper {
     public NavigationHelper(WebDriver driver){
         this.driver=driver;
     }
-    public void gotoSite(String pageID){
+    public void NavigateToAnotherSite(String pageID){
         String home = PropertyReader.getProperty("home_page");
         String page = PropertyReader.getProperty(pageID);
+        if (page == null) page = ""; // so we dont end up on https://magento.softwaretestingboard.com/null
         driver.get(home + page);
     }
 }

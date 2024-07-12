@@ -12,26 +12,15 @@ import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class test_testu {
+public class test_testu extends BlankTest{
     private WebDriver driver;
-
-
-    @Before
-    public void setUp(){
-        driver = WebDriverHelper.getDriver();
-        NavigationHelper navigationHelper = new NavigationHelper(driver);  // to do in blanktest
-        navigationHelper.gotoSite("login");
-
-    }
     @Test
     public void test(){
-        Login loginPage = new Login(driver);
+        gotoSite("login");
+        Login loginPage = new Login(driver); //Create loginPage
         loginPage.enterCredentials(PropertyReader.getProperty("username"), PropertyReader.getProperty("password"));
     }
-    @After
-    public void tearDown() {
-    WebDriverHelper.quitDriver();
-    }
+
 }
 
 
