@@ -31,7 +31,7 @@ final public class WebDriverHelper {
                     driver = new ChromeDriver(chromeOptions);
                     break;
             }
-            driver.get(PropertyReader.getProperty("home_page"));
+
             //driver.get(PropertyReader.getProperty("url") + "/customer/account/login/");
         }
         return driver;
@@ -42,4 +42,5 @@ final public class WebDriverHelper {
             driver = null;
         }
     }
+
 }

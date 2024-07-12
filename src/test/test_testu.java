@@ -2,6 +2,7 @@ package test;
 
 import main.config.PropertyReader;
 import main.helpers.WebDriverHelper;
+import main.helpers.NavigationHelper;
 import main.pages.Login;
 import org.junit.After;
 import org.junit.Before;
@@ -14,12 +15,13 @@ import java.time.Duration;
 public class test_testu {
     private WebDriver driver;
 
+
     @Before
     public void setUp(){
         driver = WebDriverHelper.getDriver();
-        String url = PropertyReader.getProperty("home_page");
-        driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        NavigationHelper navigationHelper = new NavigationHelper(driver);  // to do in blanktest
+        navigationHelper.gotoSite("login");
+
     }
     @Test
     public void test(){
