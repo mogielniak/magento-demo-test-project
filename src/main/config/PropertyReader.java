@@ -8,7 +8,7 @@ import java.util.Properties;
 public class PropertyReader {
     private static Properties properties = new Properties();
 
-    static { //we load the properties from config once we load the class to memory
+    static { //we load the properties from config.properties once we load the class to memory
         try(InputStream input = PropertyReader.class.getClassLoader().getResourceAsStream("config.properties")){
             if(input == null){
                 throw new IllegalStateException("no config.properties file");

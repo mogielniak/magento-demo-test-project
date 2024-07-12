@@ -1,12 +1,12 @@
-package main.helpers;
+package main.util;
 
 import main.config.PropertyReader;
 import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper {
+public class NavigationUtil {
     private WebDriver driver;
 
-    public NavigationHelper(WebDriver driver){
+    public NavigationUtil(WebDriver driver){
         this.driver=driver;
     }
     public void NavigateToAnotherSite(String pageID){

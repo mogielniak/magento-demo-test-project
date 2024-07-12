@@ -1,6 +1,6 @@
 package test;
 
-import main.helpers.NavigationHelper;
+import main.util.NavigationUtil;
 import main.helpers.WebDriverHelper;
 import org.junit.After;
 import org.junit.Before;
@@ -21,7 +21,7 @@ public abstract class BlankTest {
         WebDriverHelper.quitDriver();
     }
     protected void gotoSite(String PageID){
-        NavigationHelper navigationHelper = new NavigationHelper(driver);
+        NavigationUtil navigationHelper = new NavigationUtil(driver);
         navigationHelper.NavigateToAnotherSite(PageID);
     }
 }
