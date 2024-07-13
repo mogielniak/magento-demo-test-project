@@ -24,6 +24,9 @@ public class PageHelper {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
+    public void waitForTheElementToBeVisible(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
 
     public void Write (WebElement element, String text){
         wait.until(ExpectedConditions.elementToBeClickable(element));

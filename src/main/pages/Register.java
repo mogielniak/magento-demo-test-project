@@ -12,13 +12,6 @@ public class Register extends PageHelper {
         super(driver);
        // PageFactory.initElements(driver,this);
     }
-    @FindBy(id="firstname")                                         private WebElement firstName;
-    @FindBy(id="lastname")                                          private WebElement lastName;
-    @FindBy(id="email_address")                                     private WebElement email;
-    @FindBy(id="password")                                          private WebElement password;
-    @FindBy(id="password-confirmation")                             private WebElement confirmPassword;
-    @FindBy(xpath = "//*[@id=\"form-validate\"]/div/div[1]/button") private WebElement submitButton;
-
     public WebElement getFirstName(){
         return firstName;}
     public WebElement getLastName(){
@@ -29,8 +22,8 @@ public class Register extends PageHelper {
         return password;}
     public WebElement getconfirmPassword(){
         return confirmPassword;}
-    public WebElement getSubmitButton(){
-        return submitButton;}
+    public WebElement getUsedEmailAlert(){
+        return usedEmailAlert;}
 
     public void fillForm(String firstName, String lastName, String email, String password, String confirmPassword){
         Write(getFirstName(), firstName);
@@ -40,4 +33,12 @@ public class Register extends PageHelper {
         Write(getconfirmPassword(), confirmPassword);
         Click(submitButton);
     }
+    @FindBy(id="firstname")                                                 private WebElement firstName;
+    @FindBy(id="lastname")                                                  private WebElement lastName;
+    @FindBy(id="email_address")                                             private WebElement email;
+    @FindBy(id="password")                                                  private WebElement password;
+    @FindBy(id="password-confirmation")                                     private WebElement confirmPassword;
+    @FindBy(xpath = "//*[@id=\"form-validate\"]/div/div[1]/button")         private WebElement submitButton;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div")   private WebElement usedEmailAlert;
+
 }

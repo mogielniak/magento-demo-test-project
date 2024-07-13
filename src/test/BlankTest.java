@@ -16,13 +16,18 @@ public abstract class BlankTest {
         driver = WebDriverHelper.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //change to setup
     }
+
     @After
     public void tearDown() {
         WebDriverHelper.quitDriver();
     }
+
     protected void gotoSite(String PageID){
-        NavigationUtil navigationHelper = new NavigationUtil(driver);
+        NavigationUtil navigationHelper = new NavigationUtil(driver); //possibly make navigation util static idk
         navigationHelper.NavigateToAnotherSite(PageID);
+    }
+    protected String getCurrentURL(){
+        return driver.getCurrentUrl();
     }
 }
 

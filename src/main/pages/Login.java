@@ -26,7 +26,7 @@ public class Login extends PageHelper {
     public void enterCredentials(String email, String password){
         Write(getEmail(), email);
         Write(getPassword(), password);
-       // Click(log_inButton);
+        Click(log_inButton);
     }
 
 

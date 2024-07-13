@@ -1,12 +1,16 @@
 package test;
 
-import main.config.PropertyReader;
 import main.pages.Login;
 import main.pages.Register;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.openqa.selenium.WebDriver;
+
+import static main.config.PropertyReader.getProperty;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class test_testu extends BlankTest{
     private WebDriver driver;
@@ -16,16 +20,18 @@ public class test_testu extends BlankTest{
     public void test(){
         gotoSite("login");
         Login loginPage = new Login(driver);
-        loginPage.enterCredentials(PropertyReader.getProperty("L_user"), PropertyReader.getProperty("L_pass"));
+        loginPage.enterCredentials(getProperty("L_user"), getProperty("L_pass"));
+        assertEquals("https://magento.softwaretestingboard.com/customer/account/", getCurrentURL());
     }
     @Test
     @Order(2)
-    @DisplayName("Register")
+    @DisplayName("register with already used email")
     public void test2() {
         gotoSite("register");
         Register registerPage = new Register(driver);
-        registerPage.fillForm(PropertyReader.getProperty("firstName"), PropertyReader.getProperty("lastName"), PropertyReader.getProperty("email"),
-                              PropertyReader.getProperty("pass"), PropertyReader.getProperty("confirmPass"));
+        registerPage.fillForm(getProperty("firstName"), getProperty("lastName"), getProperty("email"),
+                              getProperty("pass"), getProperty("confirmPass"));
+        assertTrue(registerPage.getUsedEmailAlert().isDisplayed());
     }
 }
 

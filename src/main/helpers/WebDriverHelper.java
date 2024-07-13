@@ -31,8 +31,6 @@ final public class WebDriverHelper {
                     driver = new ChromeDriver(chromeOptions);
                     break;
             }
-
-            //driver.get(PropertyReader.getProperty("url") + "/customer/account/login/");
         }
         return driver;
     }
