@@ -3,7 +3,9 @@ package test;
 import main.util.NavigationUtil;
 import main.helpers.WebDriverHelper;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;

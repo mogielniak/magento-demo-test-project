@@ -10,7 +10,6 @@ public class Register extends PageHelper {
 
     public Register(WebDriver driver){
         super(driver);
-       // PageFactory.initElements(driver,this);
     }
     public WebElement getFirstName(){
         return firstName;}
@@ -40,5 +39,7 @@ public class Register extends PageHelper {
     @FindBy(id="password-confirmation")                                     private WebElement confirmPassword;
     @FindBy(xpath = "//*[@id=\"form-validate\"]/div/div[1]/button")         private WebElement submitButton;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div")   private WebElement usedEmailAlert;
+
+    @FindBy(xpath = "//*[@id=\"password-error\"]")                          private WebElement shortPassword;
 
 }

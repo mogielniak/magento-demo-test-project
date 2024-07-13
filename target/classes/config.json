@@ -1,0 +1,85 @@
+{
+  "sizes": ["XS", "S", "M", "L", "XL"],
+  "products": {
+    "men": {
+      "tops": {
+        "jackets": [
+          {
+            "colors": ["Black", "Navy", "Olive"]
+          },
+          {
+            "colors": ["Black", "Brown"]
+          }
+        ],
+        "hoodies": [
+          {
+            "colors": ["Gray", "Blue", "Red"]
+          }
+        ],
+        "tees": [
+          {
+            "colors": ["White", "Black", "Green"]
+          }
+        ],
+        "tanks": [
+          {
+            "colors": ["White", "Gray"]
+          }
+        ]
+      },
+      "bottoms": {
+        "pants": [
+          {
+            "sizes": ["30", "32", "34", "36", "38"],
+            "colors": ["Blue", "Black"]
+          }
+        ],
+        "shorts": [
+          {
+            "colors": ["Black", "Gray", "Navy"]
+          }
+        ]
+      }
+    },
+    "women": {
+      "tops": {
+        "jackets": [
+          {
+            "colors": ["Black", "Navy", "Olive"]
+          },
+          {
+            "colors": ["Black", "Brown"]
+          }
+        ],
+        "hoodies": [
+          {
+            "colors": ["Gray", "Blue", "Pink"]
+          }
+        ],
+        "tees": [
+          {
+            "colors": ["White", "Black", "Green"]
+          }
+        ],
+        "tanks": [
+          {
+            "colors": ["White", "Gray"]
+          }
+        ]
+      },
+      "bottoms": {
+        "pants": [
+          {
+            "sizes": ["28", "30", "32", "34"],
+            "colors": ["Blue", "Black"]
+          }
+        ],
+        "shorts": [
+          {
+            "colors": ["Black", "Gray", "Navy"]
+          }
+        ]
+      }
+    }
+  }
+}

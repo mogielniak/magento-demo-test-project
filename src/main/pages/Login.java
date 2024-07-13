@@ -10,7 +10,6 @@ public class Login extends PageHelper {
 
     public Login(WebDriver driver){
         super(driver);
-      //  PageFactory.initElements(driver,this);
     }
     @FindBy(id="email")     private WebElement email;
     @FindBy(id="pass")      private WebElement password;

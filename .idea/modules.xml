@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/my-magento-project.iml" filepath="$PROJECT_DIR$/my-magento-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Magento.iml" filepath="$PROJECT_DIR$/.idea/Magento.iml" />
     </modules>
   </component>
 </project>
