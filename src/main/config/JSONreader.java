@@ -1,27 +1,21 @@
-/*package main.config;
+package main.config;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class JSONreader {
-    private static final String JSON_FILE = "/config.json";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static customConfig readConfig() {
-        try (InputStream input = JSONreader.class.getResourceAsStream(JSON_FILE)) {
-            if (input == null) {
-                throw new IllegalStateException("no config.json file");
-            }
-            return objectMapper.readValue(input, customConfig.class);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static JsonNode readConfig() throws IOException {
+        File jsonFile = new File("src\\main\\resources\\config.json");
+        if (!jsonFile.exists()) {
+            throw new IOException("File not found: " + jsonFile.getAbsolutePath());
         }
-        return null;
+        JsonNode rootNode = objectMapper.readTree(jsonFile);
+        System.out.println("Read JSON data: " + rootNode.toString());
+        return rootNode;
     }
-    public static String getConfig(String jsonKey){
-        return objectMapper.readConfig();
-    }
-}*/
+}

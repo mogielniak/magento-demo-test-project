@@ -5,25 +5,70 @@
       "tops": {
         "jackets": [
           {
-            "colors": ["Black", "Navy", "Olive"]
+            "colors": ["black", "blue", "orange"],
+            "id": 1
           },
           {
-            "colors": ["Black", "Brown"]
+            "colors": ["black", "green", "red"],
+            "id": 2
+          },
+          {
+            "colors": ["blue", "green", "pink"],
+            "id": 3
+          },
+          {
+            "colors": ["black", "green", "red"],
+            "id": 4
+          },
+          {
+            "colors": ["black", "orange", "red"],
+            "id": 5
+          },
+          {
+            "colors": ["blue", "white", "yellow"],
+            "id": 6
+          },
+          {
+            "colors": ["blue", "grey", "green"],
+            "id": 7
+          },
+          {
+            "colors": ["black", "red", "yellow"],
+            "id": 8
+          },
+          {
+            "colors": ["black", "blue", "orange"],
+            "id": 9
+          },
+          {
+            "colors": ["black", "blue", "pink"],
+            "id": 10
+          },
+          {
+            "colors": ["green", "orange", "pink"],
+            "id": 11
+          },
+          {
+            "colors": ["orange", "red", "yellow"],
+            "id": 12
           }
         ],
         "hoodies": [
           {
-            "colors": ["Gray", "Blue", "Red"]
+            "colors": ["Gray", "Blue", "Red"],
+            "id": 1
           }
         ],
         "tees": [
           {
-            "colors": ["White", "Black", "Green"]
+            "colors": ["White", "Black", "Green"],
+            "id": 2
           }
         ],
         "tanks": [
           {
-            "colors": ["White", "Gray"]
+            "colors": ["White", "Gray"],
+            "id": 1
           }
         ]
       },

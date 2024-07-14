@@ -1,12 +1,14 @@
 package test;
-
+import main.helpers.WebDriverHelper;
 import main.pages.Login;
 import main.pages.Register;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.openqa.selenium.WebDriver;
+
+import java.time.Duration;
 
 import static main.config.PropertyReader.getProperty;
 import static org.junit.Assert.assertTrue;

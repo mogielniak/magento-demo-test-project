@@ -1,9 +1,9 @@
 package main.helpers;
 
-import main.pages.Login;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 
@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class PageHelper {
     protected WebDriver driver;
-    private Wait<WebDriver> wait = new FluentWait<>(driver)
+    protected Wait<WebDriver> wait = new FluentWait<>(driver)
                     .withTimeout(Duration.ofSeconds(2))
                     .pollingEvery(Duration.ofMillis(300))
                     .ignoring(ElementNotInteractableException.class);
@@ -32,5 +32,9 @@ public class PageHelper {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.clear();
         element.sendKeys(text);
+    }
+    public void Hover(WebElement element){
+        Actions action = new Actions(driver);
+        action.moveToElement(element).perform();
     }
 }
