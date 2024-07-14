@@ -17,13 +17,13 @@ import java.time.Duration;
 public abstract class BlankTest {
     protected WebDriver driver;
 
-    @BeforeAll
+    @Before
     public void setUp() {
         driver = WebDriverHelper.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //change to setup
     }
 
-    @AfterAll
+    @After
     public void tearDown() {
         WebDriverHelper.quitDriver();
     }

@@ -23,6 +23,21 @@ public class Register extends PageHelper {
         return confirmPassword;}
     public WebElement getUsedEmailAlert(){
         return usedEmailAlert;}
+    public WebElement getPasswordError(){
+        return passwordError;
+    }
+    public WebElement getPasswordConfirmationError(){
+        return passwordConfirmationError;
+    }
+    public WebElement getFirstNameError(){
+        return firstNameError;
+    }
+    public WebElement getLastNameError(){
+        return lastNameError;
+    }
+    public WebElement getEmailError(){
+        return emailError;
+    }
 
     public void fillForm(String firstName, String lastName, String email, String password, String confirmPassword){
         Write(getFirstName(), firstName);
@@ -41,5 +56,10 @@ public class Register extends PageHelper {
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div")   private WebElement usedEmailAlert;
 
     @FindBy(xpath = "//*[@id=\"password-error\"]")                          private WebElement shortPassword;
+    @FindBy(id = "firstname-error")                                         private WebElement firstNameError;
+    @FindBy(id = "lastname-error")                                          private WebElement lastNameError;
+    @FindBy(id = "email_address-error")                                     private WebElement emailError;
+    @FindBy(id = "password-error")                                          private WebElement passwordError;
+    @FindBy(id = "password-confirmation-error")                             private WebElement passwordConfirmationError;
 
 }

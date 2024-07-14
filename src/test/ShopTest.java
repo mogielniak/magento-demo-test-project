@@ -51,22 +51,34 @@ public class ShopTest extends BlankTest {
                 }
             }
         }
-
-        if (arguments.isEmpty()) {
-            System.out.println("No yellow jackets found.");
-        } else {
-            System.out.println("Found yellow jackets: " + arguments);
-        }
-
         return arguments.stream();
     }
+  /*  static Stream<Object[]> buyALL() throws IOException {
+        JsonNode rootNode = JSONreader.readConfig();
+        JsonNode productsNode = rootNode.path("products").path("men").path("tops").path("jackets");
+
+        List<Object[]> arguments = new ArrayList<>();
+
+        for (JsonNode product : productsNode) {
+            JsonNode colorsNode = product.path("colors");
+            for (JsonNode color : colorsNode) {
+                if ("Yellow".equalsIgnoreCase(color.asText())) {
+                    for (String size : new String[]{"XS", "S", "M", "L", "XL"}) {
+                        arguments.add(new Object[]{product.path("id").asInt(), size});
+                    }
+                    break;
+                }
+            }
+        }
+        return arguments.stream();
+    }*/
 
     @ParameterizedTest
     @MethodSource("yellowMenJacket")
     void testAddYellowMenJacketToCart(int productId, String size){
-        gotoSite("login");
-        Login loginPage = new Login(driver);
-        loginPage.enterCredentials(getProperty("L_user"), getProperty("L_pass"));
+        //gotoSite("login");
+       // Login loginPage = new Login(driver);
+      //  loginPage.enterCredentials(getProperty("L_user"), getProperty("L_pass"));
         gotoSite("menJacket");
         MenJacket menJacket = new MenJacket(driver);
         menJacket.addProductToCart(productId,size,"yellow");
