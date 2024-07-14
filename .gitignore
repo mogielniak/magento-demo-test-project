@@ -27,3 +27,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore Jenkinsfile
+Jenkinsfile
+
+# Ignore IntelliJ IDEA settings
+.idea/
