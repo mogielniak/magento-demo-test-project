@@ -49,7 +49,7 @@ public class LoginRegisterTest extends BlankTest {
         assertNotEquals("https://magento.softwaretestingboard.com/customer/account/", getCurrentURL());
     }
 
-   /* @Test
+   /* @Test //probably needs a setup once in a while to make it work i think every sunday data resets so register first manually, cant really automate that
     @Order(4)
     @DisplayName("register with already used email")
     public void test4() {
