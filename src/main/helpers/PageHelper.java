@@ -18,7 +18,8 @@ public class PageHelper {
                     .ignoring(ElementNotInteractableException.class);
 
     public PageHelper(WebDriver driver){
-        this.driver = WebDriverHelper.getDriver();
+        this.driver = WebDriverHelper.getDriverInv();
+        if(this.driver==null) this.driver = WebDriverHelper.getDriver();
         PageFactory.initElements(this.driver,this);
     }
     public void Click(WebElement element){

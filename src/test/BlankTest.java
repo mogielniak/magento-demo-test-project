@@ -11,6 +11,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -18,16 +20,17 @@ public abstract class BlankTest {
     protected WebDriver driver;
     NavigationUtil navigationHelper = new NavigationUtil(driver);
 
-    @Before
+   /* @Before
     public void setUp() {
         driver = WebDriverHelper.getDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //change to setup
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); //change to setup
     }
 
     @After
     public void tearDown() {
         WebDriverHelper.quitDriver();
-    }
+    }*/
 
     protected void gotoSite(String PageID){
         driver.get(navigationHelper.mergePage(PageID));

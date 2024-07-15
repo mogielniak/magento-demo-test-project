@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static main.config.JSONreader.basicConfig;
 import static main.config.PropertyReader.getProperty;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -35,7 +36,7 @@ public class ShopTest extends BlankTest {
         }
     }
     static Stream<Object[]> yellowMenJacket() throws IOException {
-        JsonNode rootNode = JSONreader.readConfig(JSONreader.basicConfig);
+        JsonNode rootNode = JSONreader.readConfig(basicConfig);
         JsonNode productsNode = rootNode.path("products").path("men").path("tops").path("jackets");
 
         List<Object[]> arguments = new ArrayList<>();
@@ -53,8 +54,8 @@ public class ShopTest extends BlankTest {
         }
         return arguments.stream();
     }
-  /*  static Stream<Object[]> buyALL() throws IOException {
-        JsonNode rootNode = JSONreader.readConfig();
+    static Stream<Object[]> buyALL() throws IOException {
+        JsonNode rootNode = JSONreader.readConfig(basicConfig);
         JsonNode productsNode = rootNode.path("products").path("men").path("tops").path("jackets");
 
         List<Object[]> arguments = new ArrayList<>();
@@ -71,7 +72,7 @@ public class ShopTest extends BlankTest {
             }
         }
         return arguments.stream();
-    }*/
+    }
 
     @ParameterizedTest
     @MethodSource("yellowMenJacket")
