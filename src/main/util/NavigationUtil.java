@@ -9,10 +9,11 @@ public class NavigationUtil {
     public NavigationUtil(WebDriver driver){
         this.driver=driver;
     }
-    public void NavigateToAnotherSite(String pageID){
+    public static String mergePage(String pageID){
         String home = PropertyReader.getProperty("home_page");
         String page = PropertyReader.getProperty(pageID);
         if (page == null) page = ""; // so we dont end up on https://magento.softwaretestingboard.com/null
-        driver.get(home + page);
+        String mergedPage = home + page;
+        return mergedPage;
     }
 }

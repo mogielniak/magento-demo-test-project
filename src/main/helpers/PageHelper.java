@@ -1,5 +1,6 @@
 package main.helpers;
 
+import main.util.PageUtil;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +23,7 @@ public class PageHelper {
     }
     public void Click(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
+        PageUtil.scrollToElement(driver, element);
         element.click();
     }
     public void waitForTheElementToBeVisible(WebElement element){

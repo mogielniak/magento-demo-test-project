@@ -16,6 +16,7 @@ import java.time.Duration;
 
 public abstract class BlankTest {
     protected WebDriver driver;
+    NavigationUtil navigationHelper = new NavigationUtil(driver);
 
     @Before
     public void setUp() {
@@ -29,8 +30,8 @@ public abstract class BlankTest {
     }
 
     protected void gotoSite(String PageID){
-        NavigationUtil navigationHelper = new NavigationUtil(driver); //possibly make navigation util static idk
-        navigationHelper.NavigateToAnotherSite(PageID);
+        driver.get(navigationHelper.mergePage(PageID));
+
     }
     protected String getCurrentURL(){
         return driver.getCurrentUrl();

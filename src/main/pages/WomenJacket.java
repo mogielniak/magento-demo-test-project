@@ -27,7 +27,7 @@ public class WomenJacket extends ShopHelper {
             case 10 -> id10;
             case 11 -> id11;
             case 12 -> id12;
-            default -> throw new IllegalArgumentException("Invalid Color");
+            default -> throw new IllegalArgumentException("Invalid id");
         };
     }
         @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[1]") WebElement id1; //first jacket

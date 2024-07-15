@@ -37,20 +37,16 @@
             "id": 8
           },
           {
-            "colors": ["black", "blue", "orange"],
+            "colors": ["black", "blue", "pink"],
             "id": 9
           },
           {
-            "colors": ["black", "blue", "pink"],
+            "colors": ["green", "orange", "red"],
             "id": 10
           },
           {
-            "colors": ["green", "orange", "pink"],
-            "id": 11
-          },
-          {
             "colors": ["orange", "red", "yellow"],
-            "id": 12
+            "id": 11
           }
         ],
         "hoodies": [

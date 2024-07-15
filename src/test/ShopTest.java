@@ -35,7 +35,7 @@ public class ShopTest extends BlankTest {
         }
     }
     static Stream<Object[]> yellowMenJacket() throws IOException {
-        JsonNode rootNode = JSONreader.readConfig();
+        JsonNode rootNode = JSONreader.readConfig(JSONreader.basicConfig);
         JsonNode productsNode = rootNode.path("products").path("men").path("tops").path("jackets");
 
         List<Object[]> arguments = new ArrayList<>();
@@ -76,9 +76,6 @@ public class ShopTest extends BlankTest {
     @ParameterizedTest
     @MethodSource("yellowMenJacket")
     void testAddYellowMenJacketToCart(int productId, String size){
-        //gotoSite("login");
-       // Login loginPage = new Login(driver);
-      //  loginPage.enterCredentials(getProperty("L_user"), getProperty("L_pass"));
         gotoSite("menJacket");
         MenJacket menJacket = new MenJacket(driver);
         menJacket.addProductToCart(productId,size,"yellow");

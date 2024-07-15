@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import main.util.PageUtil;
 import org.openqa.selenium.support.locators.RelativeLocator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public abstract class ShopHelper extends PageHelper{
     public ShopHelper(WebDriver driver) {
@@ -44,14 +45,14 @@ public abstract class ShopHelper extends PageHelper{
     }
     public void addProductToCart(int id,String size, String color){
         WebElement product = getProductElement(id);
-        PageUtil.scrollToElement(driver, product);
-        Hover(product);
+        Click(product);
         selectColor(color);
         selectSize(size);
         Click(addToCartButton);
     }
 
-    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[2]/ol/li[2]/div/div/div[4]/div/div[1]/form/button") private WebElement addToCartButton;
+
+    @FindBy(id = "product-addtocart-button")        private WebElement addToCartButton;
     @FindBy(id="option-label-size-143-item-166")    private WebElement xSmall;
     @FindBy(id="option-label-size-143-item-167")    private WebElement small;
     @FindBy(id="option-label-size-143-item-168")    private WebElement medium;
@@ -71,4 +72,5 @@ public abstract class ShopHelper extends PageHelper{
     @FindBy(id="option-label-color-93-item-59")    private WebElement white;
     @FindBy(id="option-label-color-93-item-60")    private WebElement yellow;
 
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[2]/ol/li[2]/div/div/div[4]/div/div[1]/form/button") private WebElement addToCartButtonOnMainPage;
 }
