@@ -7,9 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MenJacket extends ShopHelper {
 
-    public MenJacket(WebDriver driver) {
-        super(driver);
-    }
+
 
     @Override
     public WebElement getProductElement(int id) {

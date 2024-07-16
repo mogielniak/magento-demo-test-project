@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static main.config.PropertyReader.getProperty;
-import static main.util.NavigationUtil.mergePage;
+import static main.util.PageUtil.mergePage;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class APITest {

@@ -8,9 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Register extends PageHelper {
 
-    public Register(WebDriver driver){
-        super(driver);
-    }
+
     public WebElement getFirstName(){
         return firstName;}
     public WebElement getLastName(){

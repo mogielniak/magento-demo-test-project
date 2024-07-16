@@ -2,39 +2,50 @@ package test;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import main.config.JSONreader;
-import main.helpers.WebDriverHelper;
-import main.pages.Login;
+import main.helpers.webDriver.browserType;
+import main.helpers.webDriver.driverUtil;
 import main.pages.MenJacket;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
-import main.helpers.WebDriverHelper;
 
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Stream;
 
 import static main.config.JSONreader.basicConfig;
-import static main.config.PropertyReader.getProperty;
+
+import static main.util.PageUtil.gotoSite;
+import static org.testng.Assert.assertEquals;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ShopTest extends BlankTest {
+public class ShopTest{                                  //to do: make it work for one browser
+                                                        //it used to work like that but yeah idk.. im tired bye
+
+    WebDriver driver;
 
     @BeforeEach
     public void setUp(){
-        if(driver==null){
-            driver = WebDriverHelper.getDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        WebDriver driver = browserType.createBrowser();
+        driverUtil.setWebDriver(driver);}
+    @AfterEach
+    public void tearDown(){
+        driver = driverUtil.getDriver();
+        if (driver != null) {
+            driver.quit();
         }
     }
+
+
     static Stream<Object[]> yellowMenJacket() throws IOException {
         JsonNode rootNode = JSONreader.readConfig(basicConfig);
         JsonNode productsNode = rootNode.path("products").path("men").path("tops").path("jackets");
@@ -78,8 +89,9 @@ public class ShopTest extends BlankTest {
     @MethodSource("yellowMenJacket")
     void testAddYellowMenJacketToCart(int productId, String size){
         gotoSite("menJacket");
-        MenJacket menJacket = new MenJacket(driver);
+        MenJacket menJacket = new MenJacket();
         menJacket.addProductToCart(productId,size,"yellow");
     }
+
 }
 

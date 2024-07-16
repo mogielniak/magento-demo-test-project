@@ -11,9 +11,6 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public abstract class ShopHelper extends PageHelper{
-    public ShopHelper(WebDriver driver) {
-        super(driver);
-    }
 
     public abstract WebElement getProductElement(int id);
 
@@ -27,7 +24,7 @@ public abstract class ShopHelper extends PageHelper{
             default -> throw new IllegalArgumentException("Invalid Size");
         };
         Click(element);
-       }
+    }
     public void selectColor(String color){
         WebElement element = switch(color){
             case"black" -> black;
@@ -64,8 +61,8 @@ public abstract class ShopHelper extends PageHelper{
     @FindBy(id="option-label-color-93-item-51")    private WebElement brown;
     @FindBy(id="option-label-color-93-item-52")    private WebElement grey;
     @FindBy(id="option-label-color-93-item-53")    private WebElement green;
-   // @FindBy(id="option-label-color-93-item-54")    private WebElement black; idk cool guys lets just do nothing with 54 and 55 yeah that gonna be fun right!!!!!!!!not really
-   // @FindBy(id="option-label-color-93-item-55")    private WebElement black; what am i supposed to do now just leave it like that?
+    // @FindBy(id="option-label-color-93-item-54")    private WebElement black; idk cool guys lets just do nothing with 54 and 55 yeah that gonna be fun right!!!!!!!!not really
+    // @FindBy(id="option-label-color-93-item-55")    private WebElement black; what am i supposed to do now just leave it like that?
     @FindBy(id="option-label-color-93-item-56")    private WebElement orange; // ok : (
     @FindBy(id="option-label-color-93-item-57")    private WebElement pink;
     @FindBy(id="option-label-color-93-item-58")    private WebElement red;

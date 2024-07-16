@@ -8,12 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Login extends PageHelper {
 
-    public Login(WebDriver driver){
-        super(driver);
-    }
-    @FindBy(id="email")     private WebElement email;
-    @FindBy(id="pass")      private WebElement password;
-    @FindBy(id = "send2")   private WebElement log_inButton;
 
     public WebElement getEmail(){
         return email;}
@@ -28,7 +22,9 @@ public class Login extends PageHelper {
         Click(log_inButton);
     }
 
-
+    @FindBy(id="email")     private WebElement email;
+    @FindBy(id="pass")      private WebElement password;
+    @FindBy(id = "send2")   private WebElement log_inButton;
 
 
 
