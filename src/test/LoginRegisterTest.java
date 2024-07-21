@@ -1,26 +1,12 @@
 package test;
-//import junit.framework.TestListener;
-
 import main.helpers.webDriver.WebDriverHelper;
 import main.pages.Login;
 import main.pages.Register;
 
-
-//import org.junit.Test;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Order;
-//import static org.junit.Assert.assertTrue;
-//import static org.junit.Assert.assertEquals;
-//import static org.junit.Assert.assertNotEquals;
-
-
 import static main.config.PropertyReader.getProperty;
-
 
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.*;
-
 
 import static main.util.PageUtil.getCurrentURL;
 import static main.util.PageUtil.gotoSite;
@@ -138,6 +124,25 @@ public class LoginRegisterTest {
         registerPage.fillForm(getProperty("firstName"), getProperty("lastName"), getProperty("email"),
                 getProperty("pass"), getProperty("nothing"));
         assertTrue(registerPage.getPasswordConfirmationError().isDisplayed());
+    }
+    @Test(priority = 12)
+    @DisplayName("register random values")
+    public void test12(){
+        gotoSite("register");
+        Register registerPage = new Register();
+        registerPage.registerWithRandomValues();
+        assertEquals(getCurrentURL(), mergePage("account"));
+    }
+    @Test(priority = 13)
+    @DisplayName("sign out")
+    public void test13(){
+        gotoSite("register");
+        Register registerPage = new Register();
+        registerPage.registerWithRandomValues();
+        registerPage.Click(registerPage.customerMenuToggle);
+        registerPage.Click(registerPage.signOutButton);
+        assertEquals(getCurrentURL(), mergePage("sign_out"));
+
     }
 }
 

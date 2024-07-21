@@ -5,8 +5,10 @@ import main.helpers.webDriver.driverUtil;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class PageUtil {
+public final class PageUtil {
+    private PageUtil(){}
 
     public static void scrollToElement(WebDriver driver, WebElement element){
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;

@@ -7,6 +7,7 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 
@@ -19,6 +20,7 @@ public class PageHelper {
             .withTimeout(Duration.ofSeconds(2))
             .pollingEvery(Duration.ofMillis(300))
             .ignoring(ElementNotInteractableException.class);
+
     private static final Logger LOGGER = Logger.getLogger(WebDriverHelper.class.getName());
     public PageHelper(){
         driver = driverUtil.getDriver();
@@ -42,4 +44,9 @@ public class PageHelper {
         Actions action = new Actions(driver);
         action.moveToElement(element).perform();
     }
+
+
+    @FindBy(xpath ="/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button")           public WebElement customerMenuToggle;
+
+    @FindBy(xpath ="/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]/a")        public WebElement signOutButton;
 }

@@ -1,14 +1,10 @@
 package main.helpers;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import main.helpers.PageHelper;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import main.util.PageUtil;
-import org.openqa.selenium.support.locators.RelativeLocator;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+
 
 public abstract class ShopHelper extends PageHelper{
 
@@ -70,4 +66,17 @@ public abstract class ShopHelper extends PageHelper{
     @FindBy(id="option-label-color-93-item-60")    private WebElement yellow;
 
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[2]/ol/li[2]/div/div/div[4]/div/div[1]/form/button") private WebElement addToCartButtonOnMainPage;
+
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[1]") public WebElement id1; //first jacket
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[2]") public WebElement id2; //second jacket
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[3]") public WebElement id3; //etc
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[4]") public WebElement id4;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[5]") public WebElement id5;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[6]") public WebElement id6;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[7]") public WebElement id7;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[8]") public WebElement id8;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[9]") public WebElement id9;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[10]") public WebElement id10;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[11]") public WebElement id11;
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[12]") public WebElement id12;
 }

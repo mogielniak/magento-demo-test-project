@@ -1,10 +1,12 @@
 package main.pages;
 
 import main.helpers.PageHelper;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
+
+
+import static main.util.FakerUtil.*;
 
 public class Register extends PageHelper {
 
@@ -43,6 +45,15 @@ public class Register extends PageHelper {
         Write(getEmail(), email);
         Write(getPassword(), password);
         Write(getconfirmPassword(), confirmPassword);
+        Click(submitButton);
+    }
+    public void registerWithRandomValues(){
+        String password = getRandomPassword();
+        Write(getFirstName(), getRandomFirstname());
+        Write(getLastName(), getRandomLastname());
+        Write(getEmail(), getRandomEmail());
+        Write(getPassword(), password);
+        Write(getconfirmPassword(), password);
         Click(submitButton);
     }
     @FindBy(id="firstname")                                                 private WebElement firstName;
